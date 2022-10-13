@@ -15,7 +15,8 @@
       src="https://kit.fontawesome.com/8672bf1c60.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.0.0/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <div class="container">
@@ -25,27 +26,27 @@
                   <form id="search-bar">
           <div class="mb-3">
                       <input type="Search" class="form-control" id="city-search" aria-describedby="Search" placeholder="Enter City">
-                      <button id="search-button">Search</button>
-                      <button id="current-temp">Current</i></button> 
+                      <button type="submit" id="search-button">Search</button>
+                      <button type="submit" id="current-temp">Current</i></button> 
                     </div>
                   </form>            
             </div>
          <div class="row"> 
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <p class="city-state" id="city">Phoenix
-                    <p class="day-temp" id="today-date">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <p class="city-state" id="city">Phoenix
+                  <p class="day-temp" id="today-date">
                     Wednesday
                     <div id="now-weather">
                         Sunny
                       </br >
-                      Humidity: <span id="humidity">15</span>
                     </div>
-                    </p>
-      </div>
-    </div>
-  </div>
+                    Humidity: <span id="humidity">15</span>
+                  </p>
+              </div>
+            </div>
+          </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
@@ -134,6 +135,6 @@
     <footer>
       Created by Meghan Hardeman
     </footer>
-    <script src="src/script.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>

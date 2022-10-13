@@ -32,14 +32,14 @@ let displayedTemp = document.querySelector("#today-temp");
 
 function convertToCelcius(event) {
   event.preventDefault();
-  displayedTemp.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}°`;
+  displayedTemp.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}`;
 }
 let celcius = document.querySelector("#celcius-link");
 celcius.addEventListener("click", convertToCelcius);
 
 function convertTofehrenheit(event) {
   event.preventDefault();
-  displayedTemp.innerHTML = `${currentTemp}°`;
+  displayedTemp.innerHTML = `${currentTemp}`;
 }
 let fehrenheit = document.querySelector("#fehrenheit-link");
 fehrenheit.addEventListener("click", convertTofehrenheit);
