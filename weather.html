@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/8672bf1c60.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="col">
+                  <form id="search-bar">
+          <div class="mb-3">
+                      <input type="Search" class="form-control" id="city-search" aria-describedby="Search" placeholder="Enter City">
+                      <button id="search-button">Search</button>
+                      <button id="current-temp">Current</i></button> 
+                    </div>
+                  </form>            
+            </div>
+         <div class="row"> 
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <p class="city-state" id="city">Phoenix
+                    <p class="day-temp" id="today-date">
+                    Wednesday
+                    <div id="now-weather">
+                        Sunny
+                      </br >
+                      Humidity: <span id="humidity">15</span>
+                    </div>
+                    </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><span class="today" id="today-temp">108</span><span class="today">°</span>
+        <span class="units">
+          <a href="#" id="fehrenheit-link">F</a> |
+          <a href="#" id="celcius-link">C</a>
+        </span>
+
+                  <div>Wind: <span id="wind">4</span> MPH</div>
+        
+        </p>
+      </div>
+    </div>
+  </div>
+</div>   
+        </br>
+        <div class="row">
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">  
+            Thu
+        </br>
+         <i class="fa-solid fa-sun"></i>
+    </br>
+        <span>70&deg; / 107&deg;</span>
+    </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">  
+            Fri
+        </br>
+         <i class="fa-solid fa-cloud-sun-rain"></i>
+    </br>
+        <span>65&deg; / 105&deg;</span>
+    </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">  
+            Sat
+        </br>
+         <i class="fa-solid fa-cloud-sun"></i>
+    </br>
+        <span>70&deg; / 108&deg;</span>
+    </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">  
+            Sun
+        </br>
+         <i class="fa-solid fa-sun"></i>
+    </br>
+        <span>80&deg; / 109&deg;</span>
+    </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">  
+            Mon
+        </br>
+         <i class="fa-solid fa-sun"></i>
+    </br>
+        <span>81&deg; / 109&deg;</span>
+    </p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <footer>
+      Created by Meghan Hardeman
+    </footer>
+    <script src="src/script.js"></script>
+  </body>
+</html>
