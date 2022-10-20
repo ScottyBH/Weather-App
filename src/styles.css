@@ -25,12 +25,19 @@ a {
   text-decoration: none;
   color: #ffab8f;
 }
+img {
+  margin-top: -15px;
+  margin-bottom: -15px;
+  height: 60px;
+  width: 60px;
+}
 .today-info {
   padding: 20px 50px;
 }
 .city-state {
   font-size: 45px;
   font-weight: 1;
+  font-weight: 200;
 }
 .fa-sun {
   color: #ffab8f;
@@ -53,9 +60,10 @@ a {
   text-align: center;
 }
 .today {
-  font-size: 70px;
+  font-size: 65px;
   text-align: center;
   font-weight: 1;
+  font-weight: 100;
 }
 
 .card-body {
@@ -64,4 +72,8 @@ a {
 }
 .units {
   display: block;
+}
+.deg {
+  position: relative;
+  top: -40px;
 }
