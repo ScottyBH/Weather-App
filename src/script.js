@@ -31,7 +31,10 @@ function displayTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+
+  fahrenheitTemp = response.data.main.temp;
+
+  temperature.innerHTML = Math.round(fahrenheitTemp);
   cityElement.innerHTML = response.data.name;
   todayElement.innerHTML = response.data.weather[0].main;
   humidity.innerHTML = response.data.main.humidity;
@@ -55,7 +58,28 @@ function handleSumbit(event) {
   search(cityImputElement.value);
 }
 
+function convertToCelcius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#today-temp");
+  let celciusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+  tempElement.innerHTML = Math.round(celciusTemp);
+}
+
+function convertToFehrenheit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#today-temp");
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
 search("Phoenix");
+
+let fahrenheitTemp = null;
 
 let form = document.querySelector("#search-bar");
 form.addEventListener("submit", handleSumbit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", convertToCelcius);
+
+let fehrenheitLink = document.querySelector("#fehrenheit-link");
+fehrenheitLink.addEventListener("click", convertToFehrenheit);
