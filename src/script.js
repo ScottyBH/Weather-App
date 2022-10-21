@@ -42,74 +42,20 @@ function displayTemperature(response) {
   );
 }
 
-let apiKey = `894a2e7aa7f46eeca5d8778f6faa5a5b`;
-let url = `https://api.openweathermap.org/data/2.5/weather?q=Phoenix&appid=${apiKey}&units=imperial`;
+function search(city) {
+  let apiKey = `894a2e7aa7f46eeca5d8778f6faa5a5b`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
-axios.get(url).then(displayTemperature);
-
-function displayPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiKey = "894a2e7aa7f46eeca5d8778f6faa5a5b";
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
-  axios.get(url).then(currentWeather);
+  axios.get(url).then(displayTemperature);
 }
 
-function current(event) {
+function handleSumbit(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(displayPosition);
+  let cityImputElement = document.querySelector("#city-search");
+  search(cityImputElement.value);
 }
 
-let currentButton = document.querySelector("#current-temp");
-currentButton.addEventListener("click", current);
+search("Phoenix");
 
-function showCityForm(event) {
-  event.preventDefault();
-  let searchCity = document.querySelector("#city-search");
-  let displayCity = document.querySelector("#city");
-  displayCity.innerHTML = `${searchCity.value}`;
-}
-let searchForm = document.querySelector("#search-bar");
-searchForm.addEventListener("submit", showCityForm);
-
-let currentTemp = 108;
-let displayedTemp = document.querySelector("#today-temp");
-
-function convertToCelcius(event) {
-  event.preventDefault();
-  displayedTemp.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}`;
-}
-let celcius = document.querySelector("#celcius-link");
-celcius.addEventListener("click", convertToCelcius);
-
-function convertTofehrenheit(event) {
-  event.preventDefault();
-  displayedTemp.innerHTML = `${currentTemp}`;
-}
-let fehrenheit = document.querySelector("#fehrenheit-link");
-fehrenheit.addEventListener("click", convertTofehrenheit);
-
-function currentPosition(response) {
-  let currentCity = document.querySelector("#today-temp");
-  let temperature = Math.round(response.data.main.temp);
-  currentCity.innerHTML = `${temperature.value}`;
-}
-
-function showPosition(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let apiKey = "894a2e7aa7f46eeca5d8778f6faa5a5b";
-  let url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
-
-  axios.get(url).then(currentPosition);
-}
-
-function getCurrentPosition(position) {
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
-
-let button = document.querySelector("#current-temp");
-button.addEventListener("click", getCurrentPosition);
-
-let searchButton = document.querySelector("#search-bar");
-searchButton.addEventListener("submit", displayTemperature);
+let form = document.querySelector("#search-bar");
+form.addEventListener("submit", handleSumbit);
