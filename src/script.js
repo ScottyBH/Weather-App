@@ -71,7 +71,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = `894a2e7aa7f46eeca5d8778f6faa5a5b`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
@@ -132,9 +131,3 @@ let fahrenheitTemp = null;
 
 let form = document.querySelector("#search-bar");
 form.addEventListener("submit", handleSumbit);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", convertToCelcius);
-
-let fehrenheitLink = document.querySelector("#fehrenheit-link");
-fehrenheitLink.addEventListener("click", convertToFehrenheit);
